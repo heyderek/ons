@@ -1,0 +1,418 @@
+@import 'reset.sass'
+@import 'frameless.sass'
+@import 'flexslider.sass'
+
+//Colors
+
+$white: #fff
+$yellow: #FFCC00
+$lt_gray: #E7E8E7
+$md_gray: #999999
+$mdrk_gray: #666666
+$drk_gray: #333
+$hvy_gray: #111
+
+//Typograpy
+
+@font-face
+  font-family: 'aliquamultralight'
+  src: url('fonts/aliquam-webfont.eot')
+  src: url('fonts/aliquam-webfont.eot?#iefix') format("embedded-opentype"), url('fonts/aliquam-webfont.woff') format("woff"), url('fonts/aliquam-webfont.ttf') format("truetype"), url('fonts/aliquam-webfont.svg#aliquamultralight') format("svg")
+  font-weight: normal
+  font-style: normal
+@mixin aliquam
+  font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif
+
+@font-face
+  font-family: 'cabin_condensedregular'
+  src: url('fonts/cabincondensed-regular-webfont.eot')
+  src: url('fonts/cabincondensed-regular-webfont.eot?#iefix') format("embedded-opentype"), url('fonts/cabincondensed-regular-webfont.woff') format("woff"), url('fonts/cabincondensed-regular-webfont.ttf') format("truetype"), url('fonts/cabincondensed-regular-webfont.svg#cabin_condensedregular') format("svg")
+  font-weight: normal
+  font-style: normal
+@mixin cabinreg
+  font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif
+
+//General
+
+body
+  @include cabinreg
+  background: $hvy_gray
+  color: $md_gray
+  font-weight: normal
+  font-size: 16px
+  a
+    text-decoration: none
+    color: $yellow
+    &:hover
+      color: $lt_gray
+.button
+  display: inline-block
+  background: url(images/button_arrow.png) 96% center no-repeat $drk_gray
+  padding: 20px
+  padding-right: 55px
+  border-radius: 15em
+  color: $lt_gray
+  font-size: 24px
+  text-transform: uppercase
+  text-shadow: 0 1px 0 rgba(0,0,0,1)
+  &:hover
+    color: $md_gray
+h1,h2,h3,h4,h5,h6
+  @include aliquam
+  font-size: 40px
+  color: $lt_gray
+  margin: 0 0 20px 0
+  font-weight: normal
+p
+  margin: 0 0 20px 0
+  line-height: 1.35em
+ul, ol
+  margin: 0 0 20px 10px
+  padding: 0 0 0 10px
+  li
+    margin: 0 0 10px 0
+ul
+  list-style: disc outside
+ol
+  list-style: decimal outside
+strong
+  font-weight: bold
+em
+  font-style: italic
+input[type="submit"]
+  border: none
+  background: $mdrk_gray
+  padding: 10px 20px
+  font-size: 16px
+input[type="text"]
+  background: $mdrk_gray
+  border: none
+  border-radius: 15em
+  padding: 10px
+  font-family: inherit
+  color: $drk_gray
+  width: 30em
+  display: block
+  margin-bottom: $gutter
+  &:focus
+    background: $md_gray
+textarea
+  background: $mdrk_gray
+  border: none
+  width: 30em
+  color: $hvy_gray
+  font-family: inherit
+  border-radius: 8px
+  padding: 10px
+  display: block
+  margin-bottom: $gutter
+  &:focus
+    background: $md_gray
+#captcha
+  margin-bottom: $gutter
+  img
+    max-width: 100%
+    height: auto
+.wrapper
+  position: relative
+  margin: 0 auto
+  padding: 20px 0
+  width: $cols16
+
+//Header
+
+#about
+  background: url(images/use_your_illusion.png)
+  border-top: 5px solid $yellow
+  header
+    padding: 20px
+    padding-top: 0
+    white-space: nowrap
+    hgroup
+      width: $cols6
+      h1,h2
+        position: absolute
+        text-indent: -9999em
+    nav
+      @include aliquam
+      font-size: 24px
+  #access
+    position: fixed
+    z-index: 9
+    right: 10%
+    top: 20px
+    background: $drk_gray
+    box-shadow: 1px 1px 4px rgba(0,0,0,.25)
+    border: 1px solid $lt_gray
+    margin: 0
+    list-style: none
+    padding: 
+      top: 25px
+      bottom: 27px
+      left: 35px
+      right: 35px
+    overflow: hidden
+    border-radius: 15em
+    li
+      display: inline-block
+      margin: 0
+    a
+      color: $lt_gray
+      padding: 20px
+      &:hover
+        border:
+          bottom: 5px solid $yellow
+        margin-bottom: -5px
+  #graphic, #text
+    width: $cols8
+    vertical-align: middle
+    white-space: normal
+    display: inline-block
+    box-sizing: border-box
+  #graphic
+    text-align: center
+    img
+      max-width: 100%
+      height: auto
+  h3
+    font-size: 62px
+
+//Content
+#portfolio
+  padding: 0 0 40px
+  background: -webkit-linear-gradient(top , #111111 0%, #666666 379px, #111111 45px)
+  background: linear-gradient(to bottom, #111111 0%, #666666 379px, #111111 45px)
+  .flexslider
+    box-shadow: none
+    margin: 0
+    ul
+      margin: 0
+      li
+        margin-bottom: 0
+    ol.flex-control-nav
+      display: none
+    img
+      background: $md_gray
+      padding: 10px
+      box-shadow: 2px -2px 5px rgba(0,0,0,.75)
+      &:hover
+        cursor: pointer
+    .active
+      background: url(images/active_arrow.png) center bottom no-repeat $yellow
+    article
+      display: none
+      height: 100%
+      position: relative
+      white-space: normal
+      top: 100%
+      width: $cols9
+      left: $cols2
+    aside
+      display: none
+  .flex-disabled
+    display: none
+  .flex-direction-nav a
+    position: absolute
+    top: 125px
+    text-indent: -9999em
+    width: 100px
+    height: 100px 
+    border: none
+    z-index: 9
+  .flex-next
+    background: url(images/arrow_right.png) center center no-repeat
+    right: 0
+    border-radius: 5px 0 0 5px
+  .flex-prev
+    background: url(images/arrow_left.png) center center no-repeat
+    left: 0
+    border-radius: 0 5px 5px 0
+  #portfolio_info
+    width: $cols9
+    margin-top: $gutter*2
+    margin-left: $cols5
+    .portfolio-content, .project-specs
+      box-sizing: border-box
+      display: inline-block
+      vertical-align: top
+    .portfolio-content
+      width: $cols6
+      padding-left: $gutter
+    aside.project-specs
+      width: $cols3
+      margin-left: -$cols9
+
+#services
+  background: $drk_gray
+.contact-info, .content
+  display: inline-block
+  vertical-align: top
+  box-sizing: border-box
+.contact-info
+  margin-left: $cols2
+  width: $cols3
+.content
+  width: $cols7
+  padding-left: 20px
+#accordion
+  h4
+    font-size: 22px
+    background: $hvy_gray
+    padding: 10px 15px
+    color: $md_gray
+    border-radius: 15em
+    &:hover
+      cursor: pointer
+    img
+      transition: all .2s linear
+      margin-right: 10px
+    &.open img
+      transform: rotate(90deg)
+    &.open + article
+      display: block
+  article
+    display: none
+    padding-left: 20px
+
+#contact
+  background: $drk_gray
+  .contact-info, .contact-form
+    display: inline-block
+    vertical-align: top
+    box-sizing: border-box
+  .contact-form
+    width: $cols10
+    padding-left: 20px
+.contact-info,.project-specs
+  h1,h2,h3,h4,h5,h6
+    font-size: 32px
+
+
+//Footer
+
+footer
+  text-align: center
+  margin: ($gutter *2) 0
+
+//Break Points
+
+@media screen and (min-width: 960px) and (max-width: 1219px)
+  .wrapper
+    width: $cols12
+  #about
+    #access
+      right: 0
+    #graphic
+      width: $cols6
+    #text
+      width: $cols5
+      h3
+        font-size: 42px
+  #services
+  #portfolio
+    #portfolio_info
+      margin-left: $cols3
+  #contact
+    .contact-form
+      width: $cols8
+  .contact-info
+    margin-left: 0
+
+@media screen and (min-width: 540px) and (max-width: 959px)
+  .wrapper
+    width: $cols8
+  #about
+    #access
+      position: relative
+      top: 0
+      right: 0
+      margin-top: $gutter
+    #graphic,#text
+      width: $cols8
+      display: block
+      text-align: center
+      h3
+        font-size: 42px
+  #services
+    .contact-info
+      display: none
+  #portfolio
+    #portfolio_info
+      margin-left: 0
+      width: 100%
+      .portfolio-content
+        padding-left: 0
+        width: 100%
+      aside.project-specs
+        margin-left: 0 
+  #contact
+    .contact-form
+      width: $cols8
+  .contact-info
+    margin-left: 0
+    width: 100%
+
+@media screen and (min-width: 0px) and (max-width: 539px)
+  .wrapper
+    width: $cols4
+    padding: 20px 0
+  #about
+    header
+      padding: 0 0 $gutter
+      hgroup
+        width: 100%
+        img
+          width: 100%
+          height: auto
+    #access
+      position: relative
+      top: 0
+      width: 100%
+      padding: 0
+      right: 0
+      margin-top: $gutter
+      border-radius: 15px
+      text-align: center
+      li
+        display: block
+        a
+          display: block
+    #graphic,#text
+      width: 100%
+      display: block
+      text-align: center
+      h3
+        font-size: 42px
+  section
+    width: 100%
+    padding: 0
+  #services
+    .content
+      width: 100%
+      padding: 0
+    .contact-info
+      display: none
+  #portfolio
+    #portfolio_info
+      margin-left: 0
+      width: 100%
+      .portfolio-content
+        padding-left: 0
+        width: 100%
+      aside.project-specs
+        margin-left: 0 
+  #contact
+    .contact-form
+      width: $cols4
+      padding: 0
+      input
+        width: 60%
+      textarea
+        width: 60%
+  .contact-info
+    margin-left: 0
+    width: 100%
+  footer
+    p
+      width: $cols4
+      margin: 0 auto
