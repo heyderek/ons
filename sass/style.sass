@@ -5,7 +5,7 @@
 //Colors
 
 $white: #fff
-$yellow: #FFCC00
+$blue: #36447C
 $lt_gray: #E7E8E7
 $md_gray: #999999
 $mdrk_gray: #666666
@@ -37,12 +37,12 @@ $hvy_gray: #111
 body
   @include cabinreg
   background: $hvy_gray
-  color: $md_gray
+  color: $drk_gray
   font-weight: normal
   font-size: 16px
   a
     text-decoration: none
-    color: $yellow
+    color: $blue
     &:hover
       color: $lt_gray
 .button
@@ -122,8 +122,8 @@ textarea
 //Header
 
 #about
-  background: url(images/use_your_illusion.png)
-  border-top: 5px solid $yellow
+  background: $white
+  border-top: 5px solid $blue
   header
     padding: 20px
     padding-top: 0
@@ -161,7 +161,7 @@ textarea
       padding: 20px
       &:hover
         border:
-          bottom: 5px solid $yellow
+          bottom: 5px solid $blue
         margin-bottom: -5px
   #graphic, #text
     width: $cols8
@@ -176,6 +176,13 @@ textarea
       height: auto
   h3
     font-size: 62px
+#logo
+  display: block
+  width: $cols4
+  margin-top: 20px
+  img
+    max-width: 100%
+    height: auto
 
 //Content
 #portfolio
@@ -198,7 +205,7 @@ textarea
       &:hover
         cursor: pointer
     .active
-      background: url(images/active_arrow.png) center bottom no-repeat $yellow
+      background: url(images/active_arrow.png) center bottom no-repeat $blue
     article
       display: none
       height: 100%

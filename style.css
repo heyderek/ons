@@ -145,11 +145,11 @@ textarea {
   overflow: auto; }
 
 ::selection {
-  background: #ffcb13;
+  background: #36447c;
   color: white; }
 
 ::-moz-selection {
-  background: #ffcb13;
+  background: #36447c;
   color: white; }
 
 img::selection {
@@ -159,7 +159,7 @@ img::-moz-selection {
   background: transparent; }
 
 body {
-  -webkit-tap-highlight-color: rgba(255, 203, 19, 0.9); }
+  -webkit-tap-highlight-color: #36447c; }
 
 @media screen and (max-width: 1px) {
   body {
@@ -362,12 +362,12 @@ html[xmlns] .slides {
 body {
   font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #111111;
-  color: #999999;
+  color: #333333;
   font-weight: normal;
   font-size: 16px; }
   body a {
     text-decoration: none;
-    color: #ffcc00; }
+    color: #36447c; }
     body a:hover {
       color: #e7e8e7; }
 
@@ -382,7 +382,7 @@ body {
   text-transform: uppercase;
   text-shadow: 0 1px 0 black; }
   .button:hover {
-    color: #fc0; }
+    color: #999999; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -425,7 +425,7 @@ input[type="text"] {
   border-radius: 15em;
   padding: 10px;
   font-family: inherit;
-  /*color: #000;*/
+  color: #333333;
   width: 30em;
   display: block;
   margin-bottom: 20px; }
@@ -436,7 +436,7 @@ textarea {
   background: #666666;
   border: none;
   width: 30em;
-  /*color: #000;*/
+  color: #111111;
   font-family: inherit;
   border-radius: 8px;
   padding: 10px;
@@ -444,19 +444,6 @@ textarea {
   margin-bottom: 20px; }
   textarea:focus {
     background: #999999; }
-
-.defaultTextActive {
-  color: #333333;
-	font-style: italic; }
-
-#contact_error {
-  border: none;
-  padding-bottom: 10px;
-  font-family: inherit;
-	font-size: 24px;
-  color: #cc0000;
-	display: none;
-  width: 30em; }
 
 #captcha {
   margin-bottom: 20px; }
@@ -471,8 +458,8 @@ textarea {
   width: 80em; }
 
 #about {
-  background: url(images/use_your_illusion.png);
-  border-top: 5px solid #ffcc00; }
+  background: white;
+  border-top: 5px solid #36447c; }
   #about header {
     padding: 20px;
     padding-top: 0;
@@ -492,7 +479,7 @@ textarea {
     top: 20px;
     background: #333333;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    border: 2px solid #e7e8e7;
+    border: 1px solid #e7e8e7;
     margin: 0;
     list-style: none;
     padding-top: 25px;
@@ -508,7 +495,7 @@ textarea {
       color: #e7e8e7;
       padding: 20px; }
       #about #access a:hover {
-        border-bottom: 5px solid #ffcc00;
+        border-bottom: 5px solid #36447c;
         margin-bottom: -5px; }
   #about #graphic, #about #text {
     width: 40em;
@@ -524,9 +511,17 @@ textarea {
   #about h3 {
     font-size: 62px; }
 
+#logo {
+  display: block;
+  width: 20em;
+  margin-top: 20px; }
+  #logo img {
+    max-width: 100%;
+    height: auto; }
+
 #portfolio {
   padding: 0 0 40px;
-  background: -webkit-linear-gradient(top, #111111 0%, #666666 381px, #111111 45px);
+  background: -webkit-linear-gradient(top, #111111 0%, #666666 379px, #111111 45px);
   background: linear-gradient(to bottom, #111111 0%, #666666 379px, #111111 45px); }
   #portfolio .flexslider {
     box-shadow: none;
@@ -544,7 +539,7 @@ textarea {
       #portfolio .flexslider img:hover {
         cursor: pointer; }
     #portfolio .flexslider .active {
-      background: url(images/active_arrow.png) center bottom no-repeat #ffcc00; }
+      background: url(images/active_arrow.png) center bottom no-repeat #36447c; }
     #portfolio .flexslider article {
       display: none;
       height: 100%;
@@ -612,16 +607,13 @@ textarea {
   border-radius: 15em; }
   #accordion h4:hover {
     cursor: pointer; }
-	#accordion span:hover {
-		border-bottom: 1px solid #ffcc00;
-    margin-bottom: -1px;}
   #accordion h4 img {
     transition: all 0.2s linear;
     margin-right: 10px; }
   #accordion h4.open img {
     transform: rotate(90deg); }
-  /*#accordion h4.open + article {*/
-    /*display: block; }*/
+  #accordion h4.open + article {
+    display: block; }
 #accordion article {
   display: none;
   padding-left: 20px; }
@@ -638,10 +630,6 @@ textarea {
 
 .contact-info h1, .contact-info h2, .contact-info h3, .contact-info h4, .contact-info h5, .contact-info h6, .project-specs h1, .project-specs h2, .project-specs h3, .project-specs h4, .project-specs h5, .project-specs h6 {
   font-size: 32px; }
-
-.contact_icon {
-  height: 32px;
-}
 
 footer {
   text-align: center;
