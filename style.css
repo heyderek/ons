@@ -361,7 +361,7 @@ html[xmlns] .slides {
 
 body {
   font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #111111;
+  background: #999999;
   color: #333333;
   font-weight: normal;
   font-size: 16px; }
@@ -373,7 +373,7 @@ body {
 
 .button {
   display: inline-block;
-  background: url(images/button_arrow.png) 96% center no-repeat #333333;
+  background: url(images/button_arrow.png) 96% center no-repeat #36447c;
   padding: 20px;
   padding-right: 55px;
   border-radius: 15em;
@@ -387,7 +387,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 40px;
-  color: #e7e8e7;
+  color: #333333;
   margin: 0 0 20px 0;
   font-weight: normal; }
 
@@ -477,7 +477,7 @@ textarea {
     z-index: 9;
     right: 10%;
     top: 20px;
-    background: #333333;
+    background: #36447c;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid #e7e8e7;
     margin: 0;
@@ -522,7 +522,7 @@ textarea {
 #portfolio {
   padding: 0 0 40px;
   background: -webkit-linear-gradient(top, #111111 0%, #666666 379px, #111111 45px);
-  background: linear-gradient(to bottom, #111111 0%, #666666 379px, #111111 45px); }
+  background: linear-gradient(to bottom, #cccccc 0%, white 379px, #cccccc 45px); }
   #portfolio .flexslider {
     box-shadow: none;
     margin: 0; }
@@ -584,7 +584,7 @@ textarea {
       margin-left: -45em; }
 
 #services {
-  background: #333333; }
+  background: #e7e8e7; }
 
 .contact-info, .content {
   display: inline-block;
@@ -601,9 +601,9 @@ textarea {
 
 #accordion h4 {
   font-size: 22px;
-  background: #111111;
+  background: #36447c;
   padding: 10px 15px;
-  color: #999999;
+  color: white;
   border-radius: 15em; }
   #accordion h4:hover {
     cursor: pointer; }
@@ -619,7 +619,7 @@ textarea {
   padding-left: 20px; }
 
 #contact {
-  background: #333333; }
+  background: #e7e8e7; }
   #contact .contact-info, #contact .contact-form {
     display: inline-block;
     vertical-align: top;

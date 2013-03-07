@@ -5,7 +5,9 @@
 //Colors
 
 $white: #fff
+$lt_blue: #2A63A3
 $blue: #36447C
+
 $lt_gray: #E7E8E7
 $md_gray: #999999
 $mdrk_gray: #666666
@@ -36,7 +38,7 @@ $hvy_gray: #111
 
 body
   @include cabinreg
-  background: $hvy_gray
+  background: $md_gray
   color: $drk_gray
   font-weight: normal
   font-size: 16px
@@ -47,7 +49,7 @@ body
       color: $lt_gray
 .button
   display: inline-block
-  background: url(images/button_arrow.png) 96% center no-repeat $drk_gray
+  background: url(images/button_arrow.png) 96% center no-repeat $blue
   padding: 20px
   padding-right: 55px
   border-radius: 15em
@@ -60,7 +62,7 @@ body
 h1,h2,h3,h4,h5,h6
   @include aliquam
   font-size: 40px
-  color: $lt_gray
+  color: $drk_gray
   margin: 0 0 20px 0
   font-weight: normal
 p
@@ -141,7 +143,7 @@ textarea
     z-index: 9
     right: 10%
     top: 20px
-    background: $drk_gray
+    background: $blue
     box-shadow: 1px 1px 4px rgba(0,0,0,.25)
     border: 1px solid $lt_gray
     margin: 0
@@ -188,7 +190,7 @@ textarea
 #portfolio
   padding: 0 0 40px
   background: -webkit-linear-gradient(top , #111111 0%, #666666 379px, #111111 45px)
-  background: linear-gradient(to bottom, #111111 0%, #666666 379px, #111111 45px)
+  background: linear-gradient(to bottom, #ccc 0%, #fff 379px, #ccc 45px)
   .flexslider
     box-shadow: none
     margin: 0
@@ -250,7 +252,7 @@ textarea
       margin-left: -$cols9
 
 #services
-  background: $drk_gray
+  background: $lt_gray
 .contact-info, .content
   display: inline-block
   vertical-align: top
@@ -264,9 +266,9 @@ textarea
 #accordion
   h4
     font-size: 22px
-    background: $hvy_gray
+    background: $blue
     padding: 10px 15px
-    color: $md_gray
+    color: $white
     border-radius: 15em
     &:hover
       cursor: pointer
@@ -282,7 +284,7 @@ textarea
     padding-left: 20px
 
 #contact
-  background: $drk_gray
+  background: $lt_gray
   .contact-info, .contact-form
     display: inline-block
     vertical-align: top
