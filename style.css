@@ -367,13 +367,13 @@ body {
   font-size: 16px; }
   body a {
     text-decoration: none;
-    color: #36447c; }
+    color: #305a99; }
     body a:hover {
-      color: #e7e8e7; }
+      color: #2a63a3; }
 
 .button {
   display: inline-block;
-  background: url(images/button_arrow.png) 96% center no-repeat #36447c;
+  background: url(images/button_arrow.png) 96% center no-repeat #305a99;
   padding: 20px;
   padding-right: 55px;
   border-radius: 15em;
@@ -459,7 +459,7 @@ textarea {
 
 #about {
   background: white;
-  border-top: 5px solid #36447c; }
+  border-top: 5px solid #305a99; }
   #about header {
     padding: 20px;
     padding-top: 0;
@@ -477,7 +477,7 @@ textarea {
     z-index: 9;
     right: 10%;
     top: 20px;
-    background: #36447c;
+    background: #305a99;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid #e7e8e7;
     margin: 0;
@@ -495,7 +495,7 @@ textarea {
       color: #e7e8e7;
       padding: 20px; }
       #about #access a:hover {
-        border-bottom: 5px solid #36447c;
+        border-bottom: 5px solid #305a99;
         margin-bottom: -5px; }
   #about #graphic, #about #text {
     width: 40em;
@@ -539,7 +539,7 @@ textarea {
       #portfolio .flexslider img:hover {
         cursor: pointer; }
     #portfolio .flexslider .active {
-      background: url(images/active_arrow.png) center bottom no-repeat #36447c; }
+      background: url(images/active_arrow.png) center bottom no-repeat #305a99; }
     #portfolio .flexslider article {
       display: none;
       height: 100%;
@@ -601,7 +601,7 @@ textarea {
 
 #accordion h4 {
   font-size: 22px;
-  background: #36447c;
+  background: #305a99;
   padding: 10px 15px;
   color: white;
   border-radius: 15em; }
