@@ -67,17 +67,12 @@ hr {
 input, select {
   vertical-align: middle; }
 
-body, div,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, th, td,
-article, aside, figure, footer, header, hgroup, menu, nav, section {
+body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section {
   margin: 0;
   padding: 0;
   border: 0; }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, nav, section, audio, canvas, video {
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, audio, canvas, video {
   display: block; }
 
 html {
@@ -89,13 +84,17 @@ body {
   min-height: 100%;
   font-size: 100%; }
 
-sub, sup {
+sub {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
 sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
   top: -0.5em; }
 
 sub {
@@ -126,15 +125,14 @@ input, textarea, button, select {
   line-height: normal;
   vertical-align: baseline; }
 
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button, html input[type="button"] {
   cursor: pointer;
   -webkit-appearance: button; }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -144,18 +142,11 @@ input[type="radio"] {
 textarea {
   overflow: auto; }
 
-::selection {
+::selection, ::-moz-selection {
   background: #36447c;
   color: white; }
 
-::-moz-selection {
-  background: #36447c;
-  color: white; }
-
-img::selection {
-  background: transparent; }
-
-img::-moz-selection {
+img::selection, img::-moz-selection {
   background: transparent; }
 
 body {
@@ -398,8 +389,9 @@ p {
 ul, ol {
   margin: 0 0 20px 10px;
   padding: 0 0 0 10px; }
-  ul li, ol li {
-    margin: 0 0 10px 0; }
+
+ul li, ol li {
+  margin: 0 0 10px 0; }
 
 ul {
   list-style: disc outside; }
@@ -418,14 +410,13 @@ input[type="submit"] {
   background: #666666;
   padding: 10px 20px;
   font-size: 16px; }
-
 input[type="text"] {
   background: #666666;
   border: none;
   border-radius: 15em;
   padding: 10px;
   font-family: inherit;
-  color: #333333;
+  /*color: #333333; */
   width: 30em;
   display: block;
   margin-bottom: 20px; }
@@ -436,7 +427,7 @@ textarea {
   background: #666666;
   border: none;
   width: 30em;
-  color: #111111;
+  /*color: #111111; */
   font-family: inherit;
   border-radius: 8px;
   padding: 10px;
@@ -444,6 +435,19 @@ textarea {
   margin-bottom: 20px; }
   textarea:focus {
     background: #999999; }
+
+.defaultTextActive {
+  color: #333333;
+  font-style: italic; }
+
+#contact_error {
+  border: none;
+  padding-bottom: 10px;
+  font-family: inherit;
+  font-size: 24px;
+  color: #cc0000;
+  display: none;
+  width: 30em; }
 
 #captcha {
   margin-bottom: 20px; }
@@ -479,7 +483,7 @@ textarea {
     top: 20px;
     background: #305a99;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    border: 1px solid #e7e8e7;
+    border: 2px solid #e7e8e7;
     margin: 0;
     list-style: none;
     padding-top: 25px;
@@ -521,7 +525,7 @@ textarea {
 
 #portfolio {
   padding: 0 0 40px;
-  background: -webkit-linear-gradient(top, #111111 0%, #666666 379px, #111111 45px);
+  background: -webkit-linear-gradient(top, #cccccc 0%, white 379px, #cccccc 45px);
   background: linear-gradient(to bottom, #cccccc 0%, white 379px, #cccccc 45px); }
   #portfolio .flexslider {
     box-shadow: none;
@@ -612,23 +616,29 @@ textarea {
     margin-right: 10px; }
   #accordion h4.open img {
     transform: rotate(90deg); }
-  #accordion h4.open + article {
-    display: block; }
 #accordion article {
   display: none;
   padding-left: 20px; }
 
+/*#accordion h4.open + article { */
+/*  display: block; } */
 #contact {
   background: #e7e8e7; }
-  #contact .contact-info, #contact .contact-form {
+  #contact .contact-info {
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box; }
   #contact .contact-form {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
     width: 50em;
     padding-left: 20px; }
 
-.contact-info h1, .contact-info h2, .contact-info h3, .contact-info h4, .contact-info h5, .contact-info h6, .project-specs h1, .project-specs h2, .project-specs h3, .project-specs h4, .project-specs h5, .project-specs h6 {
+.contact-info h1, .contact-info h2, .contact-info h3, .contact-info h4, .contact-info h5, .contact-info h6 {
+  font-size: 32px; }
+
+.project-specs h1, .project-specs h2, .project-specs h3, .project-specs h4, .project-specs h5, .project-specs h6 {
   font-size: 32px; }
 
 footer {
@@ -669,8 +679,8 @@ footer {
     width: 40em;
     display: block;
     text-align: center; }
-    #about #graphic h3, #about #text h3 {
-      font-size: 42px; }
+  #about #graphic h3, #about #text h3 {
+    font-size: 42px; }
 
   #services .contact-info {
     display: none; }
@@ -719,8 +729,8 @@ footer {
     width: 100%;
     display: block;
     text-align: center; }
-    #about #graphic h3, #about #text h3 {
-      font-size: 42px; }
+  #about #graphic h3, #about #text h3 {
+    font-size: 42px; }
 
   section {
     width: 100%;
@@ -744,9 +754,7 @@ footer {
   #contact .contact-form {
     width: 20em;
     padding: 0; }
-    #contact .contact-form input {
-      width: 60%; }
-    #contact .contact-form textarea {
+    #contact .contact-form input, #contact .contact-form textarea {
       width: 60%; }
 
   .contact-info {

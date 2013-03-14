@@ -1,172 +1,529 @@
-@import 'reset.sass'
-@import 'frameless.sass'
-@import 'flexslider.sass'
-
-//Colors
-
-$white: #fff
-$lt_blue: #2A63A3
-$blue: #305A99
-
-$lt_gray: #E7E8E7
-$md_gray: #999999
-$mdrk_gray: #666666
-$drk_gray: #333
-$hvy_gray: #111
-
-//Typograpy
-
-@font-face
-  font-family: 'aliquamultralight'
-  src: url('fonts/aliquam-webfont.eot')
-  src: url('fonts/aliquam-webfont.eot?#iefix') format("embedded-opentype"), url('fonts/aliquam-webfont.woff') format("woff"), url('fonts/aliquam-webfont.ttf') format("truetype"), url('fonts/aliquam-webfont.svg#aliquamultralight') format("svg")
-  font-weight: normal
-  font-style: normal
-@mixin aliquam
-  font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif
-
-@font-face
-  font-family: 'cabin_condensedregular'
-  src: url('fonts/cabincondensed-regular-webfont.eot')
-  src: url('fonts/cabincondensed-regular-webfont.eot?#iefix') format("embedded-opentype"), url('fonts/cabincondensed-regular-webfont.woff') format("woff"), url('fonts/cabincondensed-regular-webfont.ttf') format("truetype"), url('fonts/cabincondensed-regular-webfont.svg#cabin_condensedregular') format("svg")
-  font-weight: normal
-  font-style: normal
-@mixin cabinreg
-  font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif
-
-//General
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
 
 body
-  @include cabinreg
-  background: $md_gray
-  color: $drk_gray
+  line-height: 1
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+nav ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ""
+    content: none
+
+q
+  &:before, &:after
+    content: ""
+    content: none
+
+a
+  margin: 0
+  padding: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+
+ins
+  background-color: #ffff99
+  color: black
+  text-decoration: none
+
+mark
+  background-color: #ffff99
+  color: black
+  font-style: italic
+  font-weight: bold
+
+del
+  text-decoration: line-through
+
+abbr[title], dfn[title]
+  border-bottom: 1px dotted
+  cursor: help
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #cccccc
+  margin: 1em 0
+  padding: 0
+
+input, select
+  vertical-align: middle
+
+body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section
+  margin: 0
+  padding: 0
+  border: 0
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, audio, canvas, video
+  display: block
+
+html
+  height: 100%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  min-height: 100%
+  font-size: 100%
+
+sub
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+  top: -0.5em
+
+sub
+  bottom: -0.25em
+
+pre
+  white-space: pre
+  white-space: pre-wrap
+  word-wrap: break-word
+
+b, strong
+  font-weight: bold
+
+abbr[title]
+  border-bottom: 1px dotted
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+a img, img
+  -ms-interpolation-mode: bicubic
+  border: 0
+
+input, textarea, button, select
+  margin: 0
+  font-size: 100%
+  line-height: normal
+  vertical-align: baseline
+
+button, html input[type="button"]
+  cursor: pointer
+  -webkit-appearance: button
+
+input
+  &[type="reset"], &[type="submit"]
+    cursor: pointer
+    -webkit-appearance: button
+  &[type="checkbox"], &[type="radio"]
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    -o-box-sizing: border-box
+    -ms-box-sizing: border-box
+    box-sizing: border-box
+
+textarea
+  overflow: auto
+
+\::selection, ::-moz-selection
+  background: #36447c
+  color: white
+
+img
+  &::selection, &::-moz-selection
+    background: transparent
+
+body
+  -webkit-tap-highlight-color: #36447c
+
+@media screen and (max-width: 1px)
+  body
+    font-size: 0.875em
+
+@media screen and (max-width: 1px)
+  body
+    font-size: 1.125em
+
+/* jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+/* Browser Resets
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus
+  outline: none
+
+.slides, .flex-control-nav, .flex-direction-nav
+  margin: 0
+  padding: 0
+  list-style: none
+
+/* FlexSlider Necessary Styles
+ *********************************
+
+.flexslider
+  margin: 0
+  padding: 0
+  .slides
+    > li
+      display: none
+      -webkit-backface-visibility: hidden
+    img
+      display: block
+
+/* Hide the slides before the JS is loaded. Avoids image jumping
+
+.flex-pauseplay span
+  text-transform: capitalize
+
+/* Clearfix for the .slides element
+
+.slides:after
+  content: "."
+  display: block
+  clear: both
+  visibility: hidden
+  line-height: 0
+  height: 0
+
+html[xmlns] .slides
+  display: block
+
+* .slides
+  height: 1%
+
+/* No JavaScript Fallback
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load
+
+.no-js li:first-child
+  display: block
+
+/* FlexSlider Default Theme
+ *********************************
+
+.flexslider
+  margin: 0 0 60px
+  position: relative
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  -o-border-radius: 4px
+  border-radius: 4px
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+  -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+  zoom: 1
+
+.flex-viewport
+  max-height: 2000px
+  -webkit-transition: all 1s ease
+  -moz-transition: all 1s ease
+  transition: all 1s ease
+
+.loading .flex-viewport
+  max-height: 300px
+
+.flexslider .slides
+  zoom: 1
+
+.carousel li
+  margin-right: 5px
+
+/* Direction Nav
+
+.flex-direction-nav
+  *height: 0
+  a
+    width: 30px
+    height: 30px
+    margin: -20px 0 0
+    display: block
+    background: url(images/bg_direction_nav.png) no-repeat 0 0
+    position: absolute
+    top: 50%
+    z-index: 10
+    cursor: pointer
+    text-indent: -9999px
+    opacity: 0
+    -webkit-transition: all 0.3s ease
+  .flex-next
+    background-position: 100% 0
+    right: -36px
+  .flex-prev
+    left: -36px
+
+.flexslider:hover
+  .flex-next
+    opacity: 0.8
+    right: 5px
+  .flex-prev
+    opacity: 0.8
+    left: 5px
+  .flex-next:hover, .flex-prev:hover
+    opacity: 1
+
+.flex-direction-nav .flex-disabled
+  opacity: 0.3 !important
+  filter: alpha(opacity = 30)
+  cursor: default
+
+/* Control Nav
+
+.flex-control-nav
+  width: 100%
+  position: absolute
+  bottom: -40px
+  text-align: center
+  li
+    margin: 0 6px
+    display: inline-block
+    zoom: 1
+    *display: inline
+
+.flex-control-paging a
+  width: 11px
+  height: 11px
+  display: block
+  background: #666666
+  background: rgba(0, 0, 0, 0.5)
+  cursor: pointer
+  text-indent: -9999px
+  -webkit-border-radius: 20px
+  -moz-border-radius: 20px
+  -o-border-radius: 20px
+  border-radius: 20px
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3)
+  &:hover
+    background: #333333
+    background: rgba(0, 0, 0, 0.7)
+  &.flex-active
+    background: black
+    background: rgba(0, 0, 0, 0.9)
+    cursor: default
+
+.flex-control-thumbs
+  margin: 5px 0 0
+  position: static
+  overflow: hidden
+  li
+    width: 25%
+    float: left
+    margin: 0
+  img
+    width: 100%
+    display: block
+    opacity: 0.7
+    cursor: pointer
+    &:hover
+      opacity: 1
+  .flex-active
+    opacity: 1
+    cursor: default
+
+@media screen and (max-width: 860px)
+  .flex-direction-nav
+    .flex-prev
+      opacity: 1
+      left: 0
+    .flex-next
+      opacity: 1
+      right: 0
+
+@font-face
+  font-family: "aliquamultralight"
+  src: url("fonts/aliquam-webfont.eot")
+  src: url("fonts/aliquam-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/aliquam-webfont.woff") format("woff"), url("fonts/aliquam-webfont.ttf") format("truetype"), url("fonts/aliquam-webfont.svg#aliquamultralight") format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: "cabin_condensedregular"
+  src: url("fonts/cabincondensed-regular-webfont.eot")
+  src: url("fonts/cabincondensed-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/cabincondensed-regular-webfont.woff") format("woff"), url("fonts/cabincondensed-regular-webfont.ttf") format("truetype"), url("fonts/cabincondensed-regular-webfont.svg#cabin_condensedregular") format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+body
+  font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif
+  background: #999999
+  color: #333333
   font-weight: normal
   font-size: 16px
   a
     text-decoration: none
-    color: $blue
+    color: #305a99
     &:hover
-      color: $lt_blue
+      color: #2a63a3
+
 .button
   display: inline-block
-  background: url(images/button_arrow.png) 96% center no-repeat $blue
+  background: url(images/button_arrow.png) 96% center no-repeat #305a99
   padding: 20px
   padding-right: 55px
   border-radius: 15em
-  color: $lt_gray
+  color: #e7e8e7
   font-size: 24px
   text-transform: uppercase
-  text-shadow: 0 1px 0 rgba(0,0,0,1)
+  text-shadow: 0 1px 0 black
   &:hover
-    color: $md_gray
-h1,h2,h3,h4,h5,h6
-  @include aliquam
+    color: #999999
+
+h1, h2, h3, h4, h5, h6
+  font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 40px
-  color: $drk_gray
+  color: #333333
   margin: 0 0 20px 0
   font-weight: normal
+
 p
   margin: 0 0 20px 0
   line-height: 1.35em
+
 ul, ol
   margin: 0 0 20px 10px
   padding: 0 0 0 10px
-  li
-    margin: 0 0 10px 0
+
+ul li, ol li
+  margin: 0 0 10px 0
+
 ul
   list-style: disc outside
+
 ol
   list-style: decimal outside
+
 strong
   font-weight: bold
+
 em
   font-style: italic
-input[type="submit"]
-  border: none
-  background: $mdrk_gray
-  padding: 10px 20px
-  font-size: 16px
-input[type="text"]
-  background: $mdrk_gray
-  border: none
-  border-radius: 15em
-  padding: 10px
-  font-family: inherit
-  color: $drk_gray
-  width: 30em
-  display: block
-  margin-bottom: $gutter
-  &:focus
-    background: $md_gray
+
+input
+  &[type="submit"]
+    border: none
+    background: #666666
+    padding: 10px 20px
+    font-size: 16px
+  &[type="text"]
+    background: #666666
+    border: none
+    border-radius: 15em
+    padding: 10px
+    font-family: inherit
+    /*color: #333333;
+    width: 30em
+    display: block
+    margin-bottom: 20px
+    &:focus
+      background: #999999
+
 textarea
-  background: $mdrk_gray
+  background: #666666
   border: none
   width: 30em
-  color: $hvy_gray
+  /*color: #111111;
   font-family: inherit
   border-radius: 8px
   padding: 10px
   display: block
-  margin-bottom: $gutter
+  margin-bottom: 20px
   &:focus
-    background: $md_gray
+    background: #999999
+
+.defaultTextActive
+  color: #333333
+  font-style: italic
+
+#contact_error
+  border: none
+  padding-bottom: 10px
+  font-family: inherit
+  font-size: 24px
+  color: #cc0000
+  display: none
+  width: 30em
+
 #captcha
-  margin-bottom: $gutter
+  margin-bottom: 20px
   img
     max-width: 100%
     height: auto
+
 .wrapper
   position: relative
   margin: 0 auto
   padding: 20px 0
-  width: $cols16
-
-//Header
+  width: 80em
 
 #about
-  background: $white
-  border-top: 5px solid $blue
+  background: white
+  border-top: 5px solid #305a99
   header
     padding: 20px
     padding-top: 0
     white-space: nowrap
     hgroup
-      width: $cols6
-      h1,h2
+      width: 30em
+      h1, h2
         position: absolute
         text-indent: -9999em
     nav
-      @include aliquam
+      font-family: aliquamultralight, "Helvetica Neue", Helvetica, Arial, sans-serif
       font-size: 24px
   #access
     position: fixed
     z-index: 9
     right: 10%
     top: 20px
-    background: $blue
-    box-shadow: 1px 1px 4px rgba(0,0,0,.25)
-    border: 1px solid $lt_gray
+    background: #305a99
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25)
+    border: 2px solid #e7e8e7
     margin: 0
     list-style: none
-    padding: 
-      top: 25px
-      bottom: 27px
-      left: 35px
-      right: 35px
+    padding-top: 25px
+    padding-bottom: 27px
+    padding-left: 35px
+    padding-right: 35px
     overflow: hidden
     border-radius: 15em
     li
       display: inline-block
       margin: 0
     a
-      color: $lt_gray
+      color: #e7e8e7
       padding: 20px
       &:hover
-        border:
-          bottom: 5px solid $blue
+        border-bottom: 5px solid #305a99
         margin-bottom: -5px
   #graphic, #text
-    width: $cols8
+    width: 40em
     vertical-align: middle
     white-space: normal
     display: inline-block
@@ -178,19 +535,19 @@ textarea
       height: auto
   h3
     font-size: 62px
+
 #logo
   display: block
-  width: $cols4
+  width: 20em
   margin-top: 20px
   img
     max-width: 100%
     height: auto
 
-//Content
 #portfolio
   padding: 0 0 40px
-  background: -webkit-linear-gradient(top , #111111 0%, #666666 379px, #111111 45px)
-  background: linear-gradient(to bottom, #ccc 0%, #fff 379px, #ccc 45px)
+  background: -webkit-linear-gradient(top, #cccccc 0%, white 379px, #cccccc 45px)
+  background: linear-gradient(to bottom, #cccccc 0%, white 379px, #cccccc 45px)
   .flexslider
     box-shadow: none
     margin: 0
@@ -201,21 +558,21 @@ textarea
     ol.flex-control-nav
       display: none
     img
-      background: $md_gray
+      background: #999999
       padding: 10px
-      box-shadow: 2px -2px 5px rgba(0,0,0,.75)
+      box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.75)
       &:hover
         cursor: pointer
     .active
-      background: url(images/active_arrow.png) center bottom no-repeat $blue
+      background: url(images/active_arrow.png) center bottom no-repeat #305a99
     article
       display: none
       height: 100%
       position: relative
       white-space: normal
       top: 100%
-      width: $cols9
-      left: $cols2
+      width: 45em
+      left: 10em
     aside
       display: none
   .flex-disabled
@@ -225,7 +582,7 @@ textarea
     top: 125px
     text-indent: -9999em
     width: 100px
-    height: 100px 
+    height: 100px
     border: none
     z-index: 9
   .flex-next
@@ -237,137 +594,139 @@ textarea
     left: 0
     border-radius: 0 5px 5px 0
   #portfolio_info
-    width: $cols9
-    margin-top: $gutter*2
-    margin-left: $cols5
+    width: 45em
+    margin-top: 40px
+    margin-left: 25em
     .portfolio-content, .project-specs
       box-sizing: border-box
       display: inline-block
       vertical-align: top
     .portfolio-content
-      width: $cols6
-      padding-left: $gutter
+      width: 30em
+      padding-left: 20px
     aside.project-specs
-      width: $cols3
-      margin-left: -$cols9
+      width: 15em
+      margin-left: -45em
 
 #services
-  background: $lt_gray
+  background: #e7e8e7
+
 .contact-info, .content
   display: inline-block
   vertical-align: top
   box-sizing: border-box
+
 .contact-info
-  margin-left: $cols2
-  width: $cols3
+  margin-left: 10em
+  width: 15em
+
 .content
-  width: $cols7
+  width: 35em
   padding-left: 20px
+
 #accordion
   h4
     font-size: 22px
-    background: $blue
+    background: #305a99
     padding: 10px 15px
-    color: $white
+    color: white
     border-radius: 15em
     &:hover
       cursor: pointer
     img
-      transition: all .2s linear
+      transition: all 0.2s linear
       margin-right: 10px
     &.open img
       transform: rotate(90deg)
-    &.open + article
-      display: block
   article
     display: none
     padding-left: 20px
 
+/*#accordion h4.open + article {
+/*  display: block; }
+
 #contact
-  background: $lt_gray
-  .contact-info, .contact-form
+  background: #e7e8e7
+  .contact-info
     display: inline-block
     vertical-align: top
     box-sizing: border-box
   .contact-form
-    width: $cols10
+    display: inline-block
+    vertical-align: top
+    box-sizing: border-box
+    width: 50em
     padding-left: 20px
-.contact-info,.project-specs
-  h1,h2,h3,h4,h5,h6
+
+.contact-info
+  h1, h2, h3, h4, h5, h6
     font-size: 32px
 
-
-//Footer
+.project-specs
+  h1, h2, h3, h4, h5, h6
+    font-size: 32px
 
 footer
   text-align: center
-  margin: ($gutter *2) 0
-
-//Break Points
+  margin: 40px 0
 
 @media screen and (min-width: 960px) and (max-width: 1219px)
   .wrapper
-    width: $cols12
+    width: 60em
   #about
     #access
       right: 0
     #graphic
-      width: $cols6
+      width: 30em
     #text
-      width: $cols5
+      width: 25em
       h3
         font-size: 42px
-  #services
-  #portfolio
-    #portfolio_info
-      margin-left: $cols3
-  #contact
-    .contact-form
-      width: $cols8
+  #portfolio #portfolio_info
+    margin-left: 15em
+  #contact .contact-form
+    width: 40em
   .contact-info
     margin-left: 0
 
 @media screen and (min-width: 540px) and (max-width: 959px)
   .wrapper
-    width: $cols8
+    width: 40em
   #about
     #access
       position: relative
       top: 0
       right: 0
-      margin-top: $gutter
-    #graphic,#text
-      width: $cols8
+      margin-top: 20px
+    #graphic, #text
+      width: 40em
       display: block
       text-align: center
-      h3
-        font-size: 42px
-  #services
-    .contact-info
-      display: none
-  #portfolio
-    #portfolio_info
-      margin-left: 0
+    #graphic h3, #text h3
+      font-size: 42px
+  #services .contact-info
+    display: none
+  #portfolio #portfolio_info
+    margin-left: 0
+    width: 100%
+    .portfolio-content
+      padding-left: 0
       width: 100%
-      .portfolio-content
-        padding-left: 0
-        width: 100%
-      aside.project-specs
-        margin-left: 0 
-  #contact
-    .contact-form
-      width: $cols8
+    aside.project-specs
+      margin-left: 0
+  #contact .contact-form
+    width: 40em
   .contact-info
     margin-left: 0
     width: 100%
 
 @media screen and (min-width: 0px) and (max-width: 539px)
   .wrapper
-    width: $cols4
+    width: 20em
     padding: 20px 0
   #about
     header
-      padding: 0 0 $gutter
+      padding: 0 0 20px
       hgroup
         width: 100%
         img
@@ -379,19 +738,19 @@ footer
       width: 100%
       padding: 0
       right: 0
-      margin-top: $gutter
+      margin-top: 20px
       border-radius: 15px
       text-align: center
       li
         display: block
         a
           display: block
-    #graphic,#text
+    #graphic, #text
       width: 100%
       display: block
       text-align: center
-      h3
-        font-size: 42px
+    #graphic h3, #text h3
+      font-size: 42px
   section
     width: 100%
     padding: 0
@@ -401,27 +760,22 @@ footer
       padding: 0
     .contact-info
       display: none
-  #portfolio
-    #portfolio_info
-      margin-left: 0
+  #portfolio #portfolio_info
+    margin-left: 0
+    width: 100%
+    .portfolio-content
+      padding-left: 0
       width: 100%
-      .portfolio-content
-        padding-left: 0
-        width: 100%
-      aside.project-specs
-        margin-left: 0 
-  #contact
-    .contact-form
-      width: $cols4
-      padding: 0
-      input
-        width: 60%
-      textarea
-        width: 60%
+    aside.project-specs
+      margin-left: 0
+  #contact .contact-form
+    width: 20em
+    padding: 0
+    input, textarea
+      width: 60%
   .contact-info
     margin-left: 0
     width: 100%
-  footer
-    p
-      width: $cols4
-      margin: 0 auto
+  footer p
+    width: 20em
+    margin: 0 auto
