@@ -462,7 +462,7 @@ textarea {
   width: 80em; }
 
 #about {
-  background: white;
+  background: url(images/pw_maze_white/pw_maze_white.png) white;
   border-top: 5px solid #305a99; }
   #about header {
     padding: 20px;
@@ -623,7 +623,7 @@ textarea {
 /*#accordion h4.open + article { */
 /*  display: block; } */
 #contact {
-  background: #e7e8e7; }
+  background: url(images/pw_maze_white/pw_maze_white.png) #e7e8e7; }
   #contact .contact-info {
     display: inline-block;
     vertical-align: top;
