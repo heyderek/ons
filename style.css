@@ -352,7 +352,7 @@ html[xmlns] .slides {
 
 body {
   font-family: cabin_condensedregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #999999;
+  background: #37477e;
   color: #333333;
   font-weight: normal;
   font-size: 16px; }
@@ -525,8 +525,15 @@ textarea {
 
 #portfolio {
   padding: 0 0 40px;
-  background: -webkit-linear-gradient(top, #cccccc 0%, white 379px, #cccccc 45px);
-  background: linear-gradient(to bottom, #cccccc 0%, white 379px, #cccccc 45px); }
+  background: -webkit-linear-gradient(top, #cccccc 0%, white 379px, #37477e 45px);
+  background: linear-gradient(to bottom, #cccccc 0%, white 379px, #37477e 45px);
+  color: white; }
+  #portfolio .section-title {
+    color: #333333; }
+  #portfolio h1, #portfolio h2, #portfolio h3, #portfolio h4, #portfolio h5, #portfolio h6 {
+    color: white; }
+  #portfolio a {
+    color: #cccccc; }
   #portfolio .flexslider {
     box-shadow: none;
     margin: 0; }
@@ -537,13 +544,13 @@ textarea {
     #portfolio .flexslider ol.flex-control-nav {
       display: none; }
     #portfolio .flexslider img {
-      background: #999999;
+      background: #cccccc;
       padding: 10px;
       box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.75); }
       #portfolio .flexslider img:hover {
         cursor: pointer; }
     #portfolio .flexslider .active {
-      background: url(images/active_arrow.png) center bottom no-repeat #305a99; }
+      background: url(images/active_arrow.png) center bottom no-repeat #eeeeee; }
     #portfolio .flexslider article {
       display: none;
       height: 100%;
@@ -588,7 +595,12 @@ textarea {
       margin-left: -45em; }
 
 #services {
-  background: #e7e8e7; }
+  background: #37477e;
+  color: white; }
+  #services h1, #services h2, #services h3, #services h4, #services h5, #services h6 {
+    color: white; }
+  #services a {
+    color: #cccccc; }
 
 .contact-info, .content {
   display: inline-block;
@@ -643,7 +655,10 @@ textarea {
 
 footer {
   text-align: center;
-  margin: 40px 0; }
+  margin: 40px 0;
+  color: white; }
+  footer a {
+    color: #cccccc; }
 
 @media screen and (min-width: 960px) and (max-width: 1219px) {
   .wrapper {
